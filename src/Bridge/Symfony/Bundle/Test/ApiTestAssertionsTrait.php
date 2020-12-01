@@ -152,7 +152,7 @@ trait ApiTestAssertionsTrait
     {
         try {
             /** @var SchemaFactoryInterface $schemaFactory */
-            $schemaFactory = static::$container->get('api_platform.json_schema.schema_factory');
+            $schemaFactory = static::$container->get('api_platform.json_schema.schema_factory'); // @phpstan-ignore-line
         } catch (ServiceNotFoundException $e) {
             throw new \LogicException('You cannot use the resource JSON Schema assertions if the "api_platform.swagger.versions" config is null or empty.');
         }

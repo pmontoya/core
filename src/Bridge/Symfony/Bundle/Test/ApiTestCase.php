@@ -97,6 +97,6 @@ abstract class ApiTestCase extends KernelTestCase
             return null;
         }
 
-        return static::$container->get('api_platform.iri_converter')->getIriFromItem($item);
+        return static::$container->get('api_platform.iri_converter')->getIriFromItem($item); // @phpstan-ignore-line
     }
 }

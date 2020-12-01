@@ -126,8 +126,7 @@ final class TypeBuilder implements TypeBuilderInterface
                     return $fields + ['clientMutationId' => GraphQLType::string()];
                 }
 
-                $fieldsBuilder = $this->fieldsBuilderLocator->get('api_platform.graphql.fields_builder');
-
+                $fieldsBuilder = $this->fieldsBuilderLocator->get('api_platform.graphql.fields_builder'); /** @phpstan-ignore-line */
                 $fields = $fieldsBuilder->getResourceObjectTypeFields($resourceClass, $resourceMetadata, $input, $queryName, $mutationName, $subscriptionName, $depth, $ioMetadata);
 
                 if ($input && null !== $mutationName && null !== $mutationArgs = $resourceMetadata->getGraphql()[$mutationName]['args'] ?? null) {
